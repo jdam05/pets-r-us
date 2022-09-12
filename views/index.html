@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+    Title: Assignment 4.2 - Pets-R-Us Part1 - index.html.
+    Author: Jamal Eddine Damir
+    Date: September 10, 2022
+    Description: HTML document for Pets-R-Us landing page.
+    Sources: 
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Inter:wght@500;900&family=Ultra&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Welcome to Pets-R-Us</title>
+		<link href="styles/site.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Element containing main navigation link and company name/logo-->
+		<header>
+			<!-- Company name/logo with link to landing page-->
+			<div id="logo"><a href="/">Pets-R-Us!</a></div>
+			<!-- Navigation links with drop down links for services-->
+			<div class="nav">
+				<div class="dropdown">
+					<button class="dropbtn">Services</button>
+					<div class="sub-services">
+						<a href="/grooming">Grooming</a>
+						<a href="/boarding">Boarding</a>
+					</div>
+				</div>
+				<a href="#">Registration</a>
+				<a href="#">Customer List</a>
+				<a href="#">Booking</a>
+				<a href="#">My Appointments</a>
+			</div>
+		</header>
+		<main>
+			<h1 id="landing-h1">Welcome To Pets-R-Us</h1>
+			<!-- Landing page main image-->
+			<img
+				id="home-image"
+				src="images/andrew-s-ouo1hbizWwo-unsplash.jpg"
+				alt="Image of Dog and Cat Sitting on The Grass."
+			/>
+			<!-- Div containing paragraph about Pets-R-Us -->
+			<div id="about">
+				<div id="landing-paragraph">
+					<h2>Why Pets-R-Us</h2>
+					<p>
+						At Pets-R-Us, we believe that pets should be loved, respected and
+						treated with all the dignity and respect they deserve. We strive to
+						make your life easier by offering all of your favorite pet products
+						at a great price. Pets are family, and at Pets-R-Us you’ll find the
+						services, products and advice to help them grow old with you. Our
+						caring experts take care of your four-legged friend(s).
+					</p>
+				</div>
+			</div>
+
+			<!-- Dog of the week div -->
+			<div id="week-dog">
+				<h2>Dog of the Week</h2>
+				<!-- Dog of the week image-->
+				<img
+					id="week-dog-image"
+					src="/images/charlesdeluvio-pOUA8Xay514-unsplash.jpg"
+					alt="Image of Dog and Cat Sitting on The Grass."/>
+				<ul id="dog-info">
+					<li><b>Name:</b> Charlie</li>
+					<li><b>Hobbies:</b> chasing, bounding and swimming</li>
+
+				</ul>
+			</div>
+
+			<!-- Div containing locations addresses and operating hours -->
+			<div id="location-hours">
+				<h2><u>Location</u></h2>
+				<p>
+					4551 Wilmington Drive<br />
+					Orlando, FL 33321
+					<hr class="hr-line">
+					8976 Verdana Way<br />
+					Oviedo, FL 34531
+				</p>
+				<h2><u>Store Hours</u></h2>
+				<p>
+					Monday&emsp;&emsp;&nbsp;7:00 Am - 9:00 PM <br>
+					Tuesday&emsp;&emsp;&nbsp;7:00 Am - 9:00 PM <br>
+					Wednesday&emsp;7:00 Am - 9:00 PM <br>
+					Thursday&emsp;&emsp;7:00 Am - 9:00 PM <br>
+					Friday&emsp;&emsp;&emsp;7:00 Am - 6:00 PM <br>
+					Saturday&emsp;&emsp;7:00 Am - 4:00 PM <br><br>
+					(Closed on Sunday)
+				</p>
+				
+			</div>
+
+			<!-- Contact form elements-->
+			<div id="contact-us">
+				<div id="form-container">
+					<h2>Contact us</h2>
+					<form>
+						<label for="first-name">First Name</label>
+						<input
+							type="text"
+							id="first-name"
+							name="first-name"
+							placeholder="Please enter your first name!"
+						/>
+						<br />
+						<label for="last-name">Last Name</label>
+						<input
+							type="text"
+							id="last-name"
+							name="last-name"
+							placeholder="Please enter your last name!"
+						/>
+						<br />
+						<label for="email">Email</label>
+						<input
+							type="text"
+							id="email"
+							name="email"
+							placeholder="Please enter your email!"
+						/>
+						<br />
+						<label for="message">Message</label>
+						<textarea
+							id="message"
+							name="message"
+							placeholder="How can we help you?"
+						></textarea>
+
+						<input type="submit" value="Submit" />
+					</form>
+				</div>
+			</div>
+
+			<!-- Clients' Feedback div -->
+			<div id="testimonials">
+				<h2> What our clients are saying...</h2>
+				<span
+					>"We made an excellent choice by taking our dog to Pets-R-Us. They were courteous and knowledgeable."
+					<i>Samantha Jones</i>
+					<hr class="hr-line">
+					"I was greeted only moments after I walked in the door, and the staff was so friendly."
+					<i>Alex Peterson</i>
+					<hr class="hr-line">
+					"I had a great experience with pets-r-us that took care of my pets for me."
+					<i>Lana Esteves</i>
+					</span
+				>
+
+				<!-- Anchor linking to top of landing page-->
+				<a id="to-top" href="#top">&uarr;To Top</a>
+			</div>
+			
+		</main>
+		<!-- Footer element with copyright info-->
+		<footer>
+			<ul class="footer-nav">
+				<li>Copyright &copy; 2022 Pets-R-Us</li>
+			</ul>
+		</footer>
+	</body>
+</html>

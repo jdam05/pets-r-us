@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+    Title: Assignment 4.2 - Pets-R-Us Part1 - grooming.html.
+    Author: Jamal Eddine Damir
+    Date: September 10, 2022
+    Description: HTML document for Pets-R-Us grooming page.
+    Sources: 
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inria+Sans&family=Inter:wght@500;900&family=Ultra&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Welcome to Pets-R-Us</title>
+		<link href="styles/site.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Element containing main navigation link and company name/logo-->
+		<header>
+			<!-- Company name/logo with link to landing page-->
+			<div id="logo"><a href="/">Pets-R-Us!</a></div>
+			<!-- Navigation links with drop down links for services-->
+			<div class="nav">
+				<div class="dropdown">
+					<button class="dropbtn">Services</button>
+					<div class="sub-services">
+						<a href="/grooming">Grooming</a>
+						<a href="/boarding">Boarding</a>
+					</div>
+				</div>
+
+				<a href="#">Registration</a>
+				<a href="#">Customer List</a>
+				<a href="#">Booking</a>
+				<a href="#">My Appointments</a>
+			</div>
+		</header>
+		<!-- Container for grooming page main content-->
+		<container id="grooming-container">
+			<h1 id="grooming-h1">The Grooming your Pet Deserves</h1>
+			<div id="grooming-services">
+				<!-- Grooming page main image-->
+				<img
+					id="grooming-image"
+					src="images/reba-spike-nAedTCXPdeg-unsplash.jpg"
+					alt="Image of dog being groomed"
+				/>
+
+				<!-- Div containing services and pricing-->
+				<div id="pricing-container">
+					<div class="pricing">
+						<h2>Bath & Brush</h2>
+						<p>Starting from $30 Depending on your pet's Breed and Size</p>
+					</div>
+					<div class="pricing">
+						<h2>De-Shedding</h2>
+						<p>Starting from $20 Depending on your pet's Breed and Size</p>
+					</div>
+					<div class="pricing">
+						<h2>Ear Cleaning</h2>
+						<p>Starting from $10 Depending on your pet's Breed and Size</p>
+					</div>
+					<div class="pricing">
+						<h2>Nail Trimming</h2>
+						<p>Starting from $10 Depending on your pet's Breed and Size</p>
+					</div>
+				</div>
+			</div>
+		</container>
+		<!-- Footer element with copyright info-->
+		<footer>
+			<ul class="footer-nav">
+				<li>Copyright &copy; 2022 Pets-R-Us</li>
+			</ul>
+		</footer>
+	</body>
+</html>
