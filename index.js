@@ -46,6 +46,19 @@ app.get("/grooming", (req, res) => {
 	});
 });
 
+app.get("/boarding", (req, res) => {
+	res.render("boarding", {
+		title: "Pets-R-Us: Boarding",
+		message: "Welcome to the pets-R-Us Boarding Page",
+	});
+});
+
+app.get("/training", (req, res) => {
+	res.render("training", {
+		title: "Pets-R-Us: Training",
+		message: "Welcome to the pets-R-Us Training Page",
+	});
+});
 // Console logging what port is listening
 app.listen(PORT, () => {
 	console.log("Application started and listening on PORT " + PORT);
