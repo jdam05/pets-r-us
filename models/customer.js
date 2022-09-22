@@ -1,3 +1,4 @@
+// Mongoose model code copied from Web340 course GitHub
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
