@@ -1,0 +1,38 @@
+<%- include('./partials/_header.html') %>
+
+<!-- div containing all the elements in the body of the registration form-->
+<div id="registration">
+	<!-- div containing form header, instructions and elements-->
+	<div id="form-container">
+		<h2>Registration</h2>
+		<br>
+		<p>
+			Please enter you ID and Email to register below to complete the registration!
+		</p>
+
+		<!-- Form tag with method and action-->
+		<form method="post" action="/customer">
+			<label for="customerId">Customer ID</label>
+			<input
+				type="text"
+				id="customerId"
+				name="customerId"
+				placeholder="Please enter customer ID!"
+				required
+			/>
+			<br />
+			<label for="email">Email</label>
+			<input
+				type="text"
+				id="email"
+				name="email"
+				placeholder="Please enter your email!"
+				required
+			/>
+
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</div>
+<!-- Footer element with copyright info-->
+<%- include('./partials/_footer.html') %>

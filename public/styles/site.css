@@ -103,7 +103,7 @@ main {
 
 /* Grooming page styles*/
 #grooming-container {
-	background-color: #94b49f;
+	background-color: #fcf8e8;
 	height: auto;
 	min-height: 100vh;
 	width: 100%;
@@ -476,6 +476,39 @@ td {
 	background-color: #ecb390;
 }
 
+/* Registration Styling */
+#registration {
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	padding: 80px 0px 80px 0px;
+	background-color: #ecb390;
+	color: #224b0c;
+	height: auto;
+	min-height: 1000px;
+}
+
+#registration input[type=text] {
+	margin-top: 10px;
+	border-radius: 12px;
+	border-style: none;
+	box-shadow: 6px 6px 6px #ccccca;;
+}
+
+#registration input[type=submit] {
+	font-family: "Inria Sans", sans-serif;
+	color: #fcf8e8;
+	padding-inline-start: 10px;
+	background-color: #DF7861;
+	width: auto;
+	min-width: 30%;
+	height: 30px;
+	border-style: none;
+	box-shadow: 6px 6px 6px #ccccca;
+	border-radius: 12px;
+
+}
+
 /* form styling*/
 #form-container {
 	background-color: #fcf8e8;
@@ -555,24 +588,6 @@ footer {
 /* Responsiveness */
 
 @media (max-width: 1024px) {
-	#dessert-image {
-		margin: 50px 20px 50px 10px;
-		order: 2;
-		border-radius: 8px;
-		height: 300px;
-		width: 300px;
-		max-width: 500px;
-	}
-
-	#salad-image {
-		margin: 50px 10px 0px 20px;
-		order: 3;
-		border-radius: 8px;
-		height: 300px;
-		width: 300px;
-		max-width: 500px;
-	}
-
 	#landing-paragraph {
 		padding: 20px 20px 0px 20px;
 	}
