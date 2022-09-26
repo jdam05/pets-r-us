@@ -1,3 +1,14 @@
+<!--
+    Title: Assignment 4.2 - Pets-R-Us - registration.html.
+    Author: Jamal Eddine Damir
+    Date: September 10, 2022
+    Description: HTML document for Pets-R-Us Registration page.
+    Sources: 
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<!-- Header include with navigation links -->
 <%- include('./partials/_header.html') %>
 
 <!-- div containing all the elements in the body of the registration form-->
@@ -5,13 +16,15 @@
 	<!-- div containing form header, instructions and elements-->
 	<div id="form-container">
 		<h2>Registration</h2>
-		<br>
+		<br />
 		<p>
-			Please enter you ID and Email to register below to complete the registration!
+			Please enter you ID and Email to register below to complete the
+			registration!
 		</p>
 
 		<!-- Form tag with method and action-->
 		<form method="post" action="/customer">
+			<!-- Required input for customer ID-->
 			<label for="customerId">Customer ID</label>
 			<input
 				type="text"
@@ -21,6 +34,8 @@
 				required
 			/>
 			<br />
+
+			<!-- Required input for Email-->
 			<label for="email">Email</label>
 			<input
 				type="text"
@@ -30,6 +45,7 @@
 				required
 			/>
 
+			<!-- Button to be clicked to submit ID and Email -->
 			<input type="submit" value="Submit" />
 		</form>
 	</div>

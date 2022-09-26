@@ -1,0 +1,46 @@
+<!--
+    Title: Assignment 4.2 - Pets-R-Us - customers.html.
+    Author: Jamal Eddine Damir
+    Date: September 22, 2022
+    Description: HTML document for Pets-R-Us customers page.
+    Sources: 
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<!-- Header include with navigation links -->
+<%- include('./partials/_header.html') %>
+
+<!-- Div containing table that displays a list of registered customers-->
+<div id="registration">
+	<div id="customer-list">
+		<h1>Our Customers</h1>
+		<!-- If customer list is not empty-->
+		<% if(customers.length > 0) { %>
+
+		<!-- Table to contain customer data-->
+		<table>
+			<tr>
+				<th>Customer ID</th>
+				<th>Email</th>
+			</tr>
+			<tbody>
+				<!-- Iterating over customers collection-->
+				<% customers.forEach(function(customer) { %>
+				<tr>
+					<!-- Displaying customer ID and email data-->
+					<td><%= customer.customerId %></td>
+					<td><%= customer.email %></td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+		<!-- If customers collection is empty, display the following message-->
+		<% } else { %>
+		<h3>Customer has not been added the MongoDB database. Try adding some!</h3>
+		<% } %>
+	</div>
+</div>
+
+<!-- Footer element with copyright info-->
+<%- include('./partials/_footer.html') %>

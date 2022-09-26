@@ -34,6 +34,8 @@ header {
 	margin-left: 30px;
 	width: 20%;
 }
+
+/* Logo anchor styling*/
 #logo a {
 	font-size: x-large;
 	font-family: "Ultra", sans-serif;
@@ -155,10 +157,14 @@ main {
 #about p {
 	line-height: 2em;
 }
+
+/* Dog of the week div styling*/
 #about-week {
 	display: flex;
 	flex-direction: row;
 }
+
+/* Styling for landing paragraphs*/
 #landing-paragraph {
 	display: block;
 	height: auto;
@@ -425,17 +431,17 @@ main {
 	background-color: #df7861;
 	margin: 20px 10px 20px 20px;
 }
-table {
+.training-fees-divs table {
 	width: 90%;
 }
-th {
+.training-fees-divs th {
 	font-family: "Ultra", sans-serif;
 	text-align: center;
 	background-color: #94b49f;
 	color: #fcf8e8;
 	padding: 0px 10px;
 }
-td {
+.training-fees-divs td {
 	font-family: "Ultra", sans-serif;
 	text-align: center;
 }
@@ -488,31 +494,31 @@ td {
 	min-height: 1000px;
 }
 
-#registration input[type=text] {
+#registration input[type="text"] {
 	margin-top: 10px;
 	border-radius: 12px;
 	border-style: none;
-	box-shadow: 6px 6px 6px #ccccca;;
+	box-shadow: 6px 6px 6px #ccccca;
 }
 
-#registration input[type=submit] {
+#registration input[type="submit"] {
 	font-family: "Inria Sans", sans-serif;
 	color: #fcf8e8;
 	padding-inline-start: 10px;
-	background-color: #DF7861;
+	background-color: #df7861;
 	width: auto;
 	min-width: 30%;
 	height: 30px;
 	border-style: none;
 	box-shadow: 6px 6px 6px #ccccca;
 	border-radius: 12px;
-
 }
 
 /* form styling*/
 #form-container {
 	background-color: #fcf8e8;
-	width: 30%;
+	min-width: 300px;
+	width: 40%;
 	margin: auto;
 	padding: 30px 0px 30px 0px;
 	border-radius: 5%;
@@ -521,6 +527,44 @@ td {
 
 #form-container h2 {
 	padding-bottom: 50x;
+}
+
+/* Customer-list div styling*/
+#customer-list {
+	background-color: #fcf8e8;
+	min-width: 300px;
+	width: 40%;
+	margin: auto;
+	padding: 30px 0px 30px 0px;
+	border-radius: 5%;
+	box-shadow: -3px 7px 43px -7px #94b49f;
+}
+
+/* styling for table displaying customer list data */
+#customer-list table {
+	width: 90%;
+	border-collapse: collapse;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: bold;
+	margin: auto;
+}
+
+#customer-list th {
+	background-color: #224b0c;
+	color: #fcf8e8;
+	text-align: center;
+	border: solid 1px #fcf8e8;
+	box-shadow: -3px 7px 23px -7px #898989;
+}
+#customer-list td,
+th {
+	text-align: left;
+	padding: 10px;
+}
+
+#customer-list tr:nth-of-type(even) {
+	background-color: #c7ccc9;
+	box-shadow: -3px 7px 23px -7px #898989;
 }
 
 form label {
@@ -540,6 +584,7 @@ input[type="text"] {
 	width: 90%;
 }
 
+/* Testimonials styling*/
 #testimonials {
 	text-align: center;
 	padding: 0px 0px 20px 0px;
@@ -553,6 +598,8 @@ input[type="text"] {
 	text-shadow: 6px 6px 6px #ccccca;
 	padding-bottom: 30px;
 }
+
+/* to-top anchor styling*/
 #to-top {
 	text-decoration: none;
 	font-family: "Inria Sans", sans-serif;

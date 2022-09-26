@@ -40,14 +40,18 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 // Connecting to mongodb database
-const CONN = "mongodb+srv://web340_admin:h1DAijpoZVOuie69@bellevueuniversity.5vradwb.mongodb.net/web340DB";
+const CONN =
+	"mongodb+srv://web340_admin:h1DAijpoZVOuie69@bellevueuniversity.5vradwb.mongodb.net/web340DB";
 
 // Displaying success or error for database connection
-mongoose.connect(CONN).then(() => {
-    console.log('Connection to MongoDB database was successful!');
-}).catch(err => {
-    console.log('MongoDB Error: ' + err.message);
-})
+mongoose
+	.connect(CONN)
+	.then(() => {
+		console.log("Connection to MongoDB database was successful!");
+	})
+	.catch((err) => {
+		console.log("MongoDB Error: " + err.message);
+	});
 
 // Rendering index.html
 app.get("/", (req, res) => {
@@ -89,31 +93,44 @@ app.get("/registration", (req, res) => {
 	});
 });
 
-// Routing HTTP POST requests 
-app.post('/customer', (req, res, next) => {
-    console.log(req.body);
-    console.log(req.body.customerId);
+// Routing HTTP POST requests
+app.post("/customer", (req, res, next) => {
+	console.log(req.body);
+	console.log(req.body.customerId);
 	console.log(req.body.email);
-    const newCustomer = new Customer({
-        customerId: req.body.customerId,
-		email: req.body.email
-    })
+	const newCustomer = new Customer({
+		customerId: req.body.customerId,
+		email: req.body.email,
+	});
 
-    console.log(newCustomer);
-    
+	console.log(newCustomer);
+
 	// Routing to landing page when no error is detected
-    Customer.create(newCustomer, function(err, customer) {
-        if (err) {
-            console.log(err);
-            next(err);
-        } else {
-            res.render("index", {
-                title: "Pets-R-Us: Home"
-            })
-        }
-    })
-})
-
+	Customer.create(newCustomer, function (err, customer) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render("index", {
+				title: "Pets-R-Us: Home",
+			});
+		}
+	});
+});
+// Getting customer list from database using the find method
+app.get("/customers", (req, res) => {
+	Customer.find({}, function (err, customers) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render("customers", {
+				title: "Pets-R-Us: Customer List",
+				customers: customers,
+			});
+		}
+	});
+});
 
 // Console logging what port is listening
 app.listen(PORT, () => {
