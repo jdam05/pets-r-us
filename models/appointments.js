@@ -2,7 +2,7 @@
     Title: Assignment 8.2 - Pets-R-Us. appointment.js
     Author: Jamal Eddine Damir
     Date: september 31, 2022
-    Description: JavaScript file containing MongoDatabase Customer schema
+    Description: JavaScript file containing MongoDatabase appointments schema
     Sources: 
             * Source code from class GitHub Repository
             * W3Schools.com
@@ -12,8 +12,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Mongoose schema
-let customerSchema = new Schema({
-	customerId: { type: String, required: true, unique: true },
+let appointmentSchema = new Schema({
+	firstName: { type: String, required: true, unique: true },
+	lastName: { type: String, required: true, unique: true },
 	email: { type: String, required: true, unique: true },
+	services: { type: String, required: true, unique: true },
 });
-module.exports = mongoose.model("Customer", customerSchema);
+module.exports = mongoose.model("Appointment", appointmentSchema);

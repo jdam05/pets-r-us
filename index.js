@@ -7,6 +7,7 @@
  * Sources:
  * Source code from class GitHub Repository
  * W3Schools.com
+ * Stackabuse.com
  * Instructor provided assignment specific instructions
  */
 
@@ -14,8 +15,10 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const fs = require("fs");
 
 const Customer = require("./models/customer");
+const Appointment = require("./models/appointments");
 
 // Initializing express app
 const app = express();
@@ -88,12 +91,12 @@ app.get("/training", (req, res) => {
 // Rendering registration.html
 app.get("/registration", (req, res) => {
 	res.render("registration", {
-		title: "Pets-R-Us: registration",
+		title: "Pets-R-Us: Registration",
 		message: "Welcome to the pets-R-Us Registration Page",
 	});
 });
 
-// Routing HTTP POST requests
+// Routing customer HTTP POST requests
 app.post("/customer", (req, res, next) => {
 	console.log(req.body);
 	console.log(req.body.customerId);
@@ -117,6 +120,7 @@ app.post("/customer", (req, res, next) => {
 		}
 	});
 });
+
 // Getting customer list from database using the find method
 app.get("/customers", (req, res) => {
 	Customer.find({}, function (err, customers) {
@@ -127,6 +131,48 @@ app.get("/customers", (req, res) => {
 			res.render("customers", {
 				title: "Pets-R-Us: Customer List",
 				customers: customers,
+			});
+		}
+	});
+});
+
+// Rendering appointment.html
+app.get("/appointment", (req, res) => {
+	fs.readFile("./public/data/services.json", (err, data) => {
+		if (err) throw err;
+		services = JSON.parse(data);
+		res.render("appointment", {
+			title: "Pets-R-Us: Appointment",
+			message: "Welcome to the pets-R-Us Appointment Page",
+			services: services,
+		});
+	});
+});
+
+// Routing appointment HTTP POST requests
+app.post("/appointments", (req, res, next) => {
+	console.log(req.body);
+	console.log(req.body.firstName);
+	console.log(req.body.lastName);
+	console.log(req.body.email);
+	console.log(req.body.services);
+	const newAppointment = new Appointment({
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
+		services: req.body.services,
+	});
+
+	console.log(newAppointment);
+
+	// Routing to landing page when no error is detected
+	Appointment.create(newAppointment, function (err, appointment) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render("index", {
+				title: "Pets-R-Us: Home",
 			});
 		}
 	});
