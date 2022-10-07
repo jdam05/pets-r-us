@@ -494,7 +494,7 @@ main {
 	min-height: 1000px;
 }
 
-#registration input[type="text"] {
+#form-container input[type="text"] {
 	margin-top: 10px;
 	border-radius: 12px;
 	border-style: none;
@@ -504,7 +504,7 @@ main {
 	width: 90%;
 }
 
-#registration input[type="email"] {
+#form-container input[type="email"] {
 	margin-top: 10px;
 	border-radius: 12px;
 	border-style: none;
@@ -514,7 +514,17 @@ main {
 	width: 90%;
 }
 
-#registration input[type="submit"] {
+#form-container textarea {
+	margin-top: 10px;
+	border-radius: 12px;
+	border-style: none;
+	box-shadow: 6px 6px 6px #ccccca;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 90%;
+}
+
+#form-container input[type="submit"] {
 	font-family: "Inria Sans", sans-serif;
 	color: #fcf8e8;
 	padding-inline-start: 10px;
@@ -526,7 +536,7 @@ main {
 	box-shadow: 6px 6px 6px #ccccca;
 	border-radius: 12px;
 }
-#registration button {
+#form-container button {
 	font-family: "Inria Sans", sans-serif;
 	color: #fcf8e8;
 	padding-inline-start: 10px;
