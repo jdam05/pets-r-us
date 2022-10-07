@@ -499,9 +499,34 @@ main {
 	border-radius: 12px;
 	border-style: none;
 	box-shadow: 6px 6px 6px #ccccca;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 90%;
+}
+
+#registration input[type="email"] {
+	margin-top: 10px;
+	border-radius: 12px;
+	border-style: none;
+	box-shadow: 6px 6px 6px #ccccca;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 90%;
 }
 
 #registration input[type="submit"] {
+	font-family: "Inria Sans", sans-serif;
+	color: #fcf8e8;
+	padding-inline-start: 10px;
+	background-color: #df7861;
+	width: auto;
+	min-width: 30%;
+	height: 30px;
+	border-style: none;
+	box-shadow: 6px 6px 6px #ccccca;
+	border-radius: 12px;
+}
+#registration button {
 	font-family: "Inria Sans", sans-serif;
 	color: #fcf8e8;
 	padding-inline-start: 10px;
@@ -580,18 +605,41 @@ th {
 	box-shadow: -3px 7px 23px -7px #898989;
 }
 
+/* Styling My Appointments page Input and Table Elements*/
+#displayAppointment table {
+	width: 70%;
+	border-collapse: collapse;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: bold;
+	margin: auto;
+}
+
+#displayAppointment th {
+	background-color: #df7861;
+	color: #fcf8e8;
+	text-align: center;
+	border: solid 1px #fcf8e8;
+	box-shadow: -3px 7px 23px -7px #898989;
+}
+#displayAppointment td,
+th {
+	text-align: center;
+	padding: 10px;
+}
+
+#displayAppointment tr:nth-of-type(even) {
+	background-color: #c7ccc9;
+	box-shadow: -3px 7px 23px -7px #898989;
+}
+#displayAppointment h2 {
+	color: #224b0c;
+	font-family: "Inria Sans", sans-serif;
+}
+
 form label {
 	float: left;
 	margin-left: 10px;
 }
-
-input[type="text"] {
-	padding: 10px;
-	margin-bottom: 10px;
-	width: 90%;
-}
-
-
 #message {
 	padding: 10px;
 	margin-bottom: 10px;

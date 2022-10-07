@@ -1,0 +1,81 @@
+<!--
+    Title: Assignment 4.5 - Pets-R-Us - booking.html.
+    Author: Jamal Eddine Damir
+    Date: September 29, 2022
+    Description: HTML document for Pets-R-Us booking page.
+    Sources: 
+            * Source code from class GitHub Repository
+            * W3Schools.com
+            * Instructor provided assignment specific instructions
+-->
+<!-- Header include with navigation links -->
+<%- include('./partials/_header.html') %>
+
+<div id="registration">
+	<!-- div containing form header, instructions and elements-->
+	<div id="form-container">
+		<h2>Appointments</h2>
+		<br />
+		<p>
+			Please complete the following form to request an appointment!
+		</p>
+
+		<!-- Form tag with method and action-->
+		<form method="post" action="/appointments">
+			<!-- Required first name input-->
+			<label for="firstName">First Name</label>
+			<input
+				type="text"
+				id="firstName"
+				name="firstName"
+				placeholder="Please enter your first name!"
+				required
+			/>
+			<br />
+			<!-- Required last name input-->
+            <label for="lastName">Last Name</label>
+			<input
+				type="text"
+				id="lastName"
+				name="lastName"
+				placeholder="Please enter your last name!"
+				required
+			/>
+			<br />
+
+			<!-- Required input for Email-->
+			<label for="email">Email</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				placeholder="Please enter your email!"
+				required
+			/>
+            <br />
+            
+			<!-- Services dropdown menu-->
+            <label for="services">Services</label>
+							<!-- List for to user to select services-->
+							<select
+								name="services"
+								class="drop-down-menu"
+								id="services"
+							>
+							<!-- Populating dropdown selection with data from services Json-->
+                            <% services.forEach(function(service) { %>
+                            <option value="<%= service.value %>"><%= service.text %></option>
+                            <% }) %>
+							</select>
+                        </br>
+
+
+
+			<!-- Button to be clicked to submit ID and Email -->
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
+</div>
+
+<!-- Footer element with copyright info-->
+<%- include('./partials/_footer.html')%>

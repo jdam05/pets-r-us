@@ -1,8 +1,8 @@
 <!--
     Title: Assignment 4.5 - Pets-R-Us - appointment.html.
     Author: Jamal Eddine Damir
-    Date: September 29, 2022
-    Description: HTML document for Pets-R-Us appointment page.
+    Date: October 07, 2022
+    Description: HTML document for Pets-R-Us booking page.
     Sources: 
             * Source code from class GitHub Repository
             * W3Schools.com
@@ -14,68 +14,50 @@
 <div id="registration">
 	<!-- div containing form header, instructions and elements-->
 	<div id="form-container">
-		<h2>Appointments</h2>
-		<br />
-		<p>
-			Please complete the following form to request an appointment!
-		</p>
-
-		<!-- Form tag with method and action-->
-		<form method="post" action="/appointments">
-			<!-- Required first name input-->
-			<label for="firstName">First Name</label>
-			<input
-				type="text"
-				id="firstName"
-				name="firstName"
-				placeholder="Please enter your first name!"
-				required
-			/>
-			<br />
-			<!-- Required last name input-->
-            <label for="lastName">Last Name</label>
-			<input
-				type="text"
-				id="lastName"
-				name="lastName"
-				placeholder="Please enter your last name!"
-				required
-			/>
-			<br />
-
-			<!-- Required input for Email-->
+		<h1>My Appointments</h1>
+		<div class="form-field">
 			<label for="email">Email</label>
 			<input
-				type="text"
+				type="email"
 				id="email"
 				name="email"
-				placeholder="Please enter your email!"
+				placeholder="Please enter you email"
 				required
 			/>
-            <br />
-            
-			<!-- Services dropdown menu-->
-            <label for="services">Services</label>
-							<!-- List for to user to select services-->
-							<select
-								name="services"
-								class="drop-down-menu"
-								id="services"
-							>
-							<!-- Populating dropdown selection with data from services Json-->
-                            <% services.forEach(function(service) { %>
-                            <option value="<%= service.value %>"><%= service.text %></option>
-                            <% }) %>
-							</select>
-                        </br>
-
-
-
-			<!-- Button to be clicked to submit ID and Email -->
-			<input type="submit" value="Submit" />
-		</form>
+		</div>
+		<br />
+		<div class="form-field">
+			<!-- Button to trigger search for appointments-->
+			<button type="submit" id="btnSearch">Search Appointments</button>
+		</div>
+		<!-- Div displaying appointment data-->
+		<div id="displayAppointment"></div>
 	</div>
 </div>
+<script>
+	// Onclick event to search for appointment
+	document.getElementById("btnSearch").onclick = function () {
+		const customerEmail = document.getElementById("email").value;
+
+		// Searching appointments collection for inputed email
+		fetch("/api/appointments/" + customerEmail)
+			.then((res) => res.json())
+			.then((data) => {
+				// Starting table with header
+				let tableString = `<h2>My Appointments</h2><table id="Appointments"><tr><th>First name</th><th>Last name</th><th>Service</th></tr>`;
+
+				for (let appointment of data) {
+					// Populating tableString with appointment related data
+					tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.services}</td></tr>`;
+				}
+				// Closing table tag
+				tableString += `</table>`;
+
+				// Binding results of tableString to displayAppointment Div
+				document.getElementById("displayAppointment").innerHTML = tableString;
+			});
+	};
+</script>
 
 <!-- Footer element with copyright info-->
 <%- include('./partials/_footer.html')%>

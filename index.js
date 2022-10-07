@@ -136,16 +136,33 @@ app.get("/customers", (req, res) => {
 	});
 });
 
-// Rendering appointment.html
-app.get("/appointment", (req, res) => {
+// Rendering booking.html
+app.get("/booking", (req, res) => {
 	fs.readFile("./public/data/services.json", (err, data) => {
 		if (err) throw err;
 		services = JSON.parse(data);
-		res.render("appointment", {
-			title: "Pets-R-Us: Appointment",
-			message: "Welcome to the pets-R-Us Appointment Page",
+		res.render("booking", {
+			title: "Pets-R-Us: Booking",
+			message: "Welcome to the pets-R-Us Appointment Booking Page",
 			services: services,
 		});
+	});
+});
+
+// Rendering appointment.html
+app.get("/appointment", (req, res, next) => {
+	Appointment.find({}, (err, appointment) => {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			// send the appointments list to the appointments page
+			res.render("appointment", {
+				title: "Pets-R-Us My Appointments",
+				Message: "Welcome to the pets-R-Us My Appointment Page",
+				appointments: appointment,
+			});
+		}
 	});
 });
 
@@ -174,6 +191,18 @@ app.post("/appointments", (req, res, next) => {
 			res.render("index", {
 				title: "Pets-R-Us: Home",
 			});
+		}
+	});
+});
+
+// Finding appointment with searched email and returning collection data
+app.get("/api/appointments/:email", async (req, res, next) => {
+	Appointment.find({ email: req.params.email }, function (err, appointments) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.json(appointments);
 		}
 	});
 });

@@ -1,14 +1,14 @@
 [
-    {
-    "text": "Grooming",
-    "value": "grooming"
-},
-{
-    "text": "Boarding",
-    "value": "boarding"
-},
-{
-    "text": "Training",
-    "value": "training"
-}
+	{
+		"text": "Grooming",
+		"value": "grooming"
+	},
+	{
+		"text": "Boarding",
+		"value": "boarding"
+	},
+	{
+		"text": "Training",
+		"value": "training"
+	}
 ]
